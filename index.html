@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="dosca "></div>
+
+
+    <script>
+        //  1. Создать функцию, генерирующую шахматную доску. При этом можно использовать любые html-теги по своему желанию. Доска должна быть разлинована соответствующим образом, т.е. чередовать черные и белые ячейки. Строки должны нумероваться числами от 1 до 8, столбцы – латинскими буквами A, B, C, D, E, F, G, H.
+        //  2. Заполнить созданную таблицу буквами, отвечающими за шахматную фигуру, например К – король, Ф – ферзь и т.п., причем все фигуры должны стоять на своих местах и быть соответственно черными и белыми.
+        //  3. *Заменить буквы, обозначающие фигуры картинками.
+        var table, th, tr, td, span, latDiv;
+        var letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+        var figTop = ["&#9814;", "&#9816;", "&#9815;", "&#9812;", "&#9813;", "&#9815;", "&#9816;", "&#9814;", "&#9823;"];
+        var figBot = ["&#9820;", "&#9822;", "&#9821;", "&#9818;", "&#9819;", "&#9821;", "&#9822;", "&#9820;", "&#9823;"];
+
+        function letter(x, position) {
+            div = document.getElementsByClassName("dosca")[0];
+            latDiv = document.createElement("div");
+            latDiv.className = "wrp";
+            div.append(latDiv);
+
+            for (var i = 0; i < 8; i++) {
+                a = document.createElement("a");
+                a.className = "wrp-letters-" + x;
+                latDiv.append(a);
+                a.insertAdjacentText('beforeend', letters[i]);
+            }
+        }
+        letter("top");
+
+        function figur(x, y, z, y1, z1, posishion) {
+            var tdList = document.querySelectorAll("td");
+            for (var i = x, j = 0; i < y; i++, j++) {
+                tdList[i].insertAdjacentHTML('afterbegin', (posishion == "top") ? figTop[j] : figBot[j]);
+                tdList[i].classList.add("conteiner-" + posishion);
+            }
+            for (var i = y1; i < z1; i++) {
+                tdList[i].insertAdjacentHTML('afterbegin', (posishion == "top") ? figTop[8] : figBot[8]);
+                tdList[i].classList.add("conteiner-" + posishion);
+            }
+        }
+
+
+
+        table = document.createElement("table");
+
+        for (var i = 1; i <= 8; i++) {
+            tr = document.createElement("tr");
+            tr.className = "conteiner-tr";
+            tr.innerText = i;
+            table.append(tr);
+            span = document.createElement("span");
+            span.className = "conteiner-span";
+
+            for (var j = 1; j <= 8; j++) {
+                td = document.createElement("td");
+                tr.append(td);
+                tr.append(span);
+                if ((i + j) % 2 == 0) {
+                    td.className = "white";
+                }
+                else {
+                    td.className = "black";
+                }
+            }
+        }
+        document.getElementsByClassName("dosca")[0].append(table);
+
+        var list = document.querySelectorAll("span");
+        for (var i = list.length, q = 0; i >= 1; i--, q++) {
+            list[q].insertAdjacentText('beforeEnd', i);
+        }
+        letter("down");
+        figur(0, 8, 16, 8, 16, "top");
+        figur(56, 64, 48, 48, 56, "down");
+    </script>
+</body>
+
+</html>
