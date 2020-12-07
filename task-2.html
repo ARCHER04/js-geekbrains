@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="task-2.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 class="header1">Корзина:</h1>
+    <button id="b4">Оформить заказ</button>
+    <hr>
+    <div class="container">
+        <section class="prices">
+            <h2 class="prices-header">Buy it now</h2>
+            <div class="price-1">
+                <span class="price-title" id="h1">standart</span>
+                <span class="price-txt" id="price2">$100</span>
+                <ol class="price-list">
+                    <li class="list">Porro officia cumque sint deleniti; </li>
+                    <li class="list">Тemo facere rem vitae odit;</li>
+                    <li class="list">Cum odio, iste quia doloribus autem; </li>
+                    <li class="list">Aperiam nulla ea neque.</li>
+                </ol>
+                <button class="price-btn" id="b1">buy</button>
+            </div>
+            <div class="price-1">
+                <span class="price-title" id="h2">Premium</span>
+                <span class="price-txt" id="price2">$150</span>
+                <ol class="price-list">
+                    <li class="list">Porro officia cumque sint deleniti; </li>
+                    <li class="list">Тemo facere rem vitae odit;</li>
+
+                </ol>
+                <button class="price-btn" id="b2">buy</button>
+            </div>
+            <div class="price-1">
+                <span class="price-title" id="h3">Lux</span>
+                <span class="price-txt" id="price2">$200</span>
+                <ol class="price-list">
+                    <li class="list">Porro officia cumque sint deleniti; </li>
+                    <li class="list">Тemo facere rem vitae odit;</li>
+                    <li class="list">Cum odio, iste quia doloribus autem; </li>
+                    <li class="list">Aperiam nulla ea neque.</li>
+                    <li class="list">Porro officia cumque sint deleniti; </li>
+
+                </ol>
+                <button class="price-btn" id="b3">buy</button>
+            </div>
+        </section>
+        </main>
+    </div>
+
+
+
+    <script>
+        var b1 = document.querySelector("#b1");
+        var b2 = document.querySelector("#b2");
+        var b3 = document.querySelector("#b3");
+        var b4 = document.querySelector("#b4");
+        var button = document.querySelectorAll("button");
+        var items = {
+            obj1: {
+                id: 1,
+                tovar: "Стандарт",
+                price: 100
+            },
+            obj2: {
+                id: 2,
+                tovar: "Премиум",
+                price: 150
+            },
+            obj3: {
+                id: 3,
+                tovar: "Люкс",
+                price: 200
+            }
+        }
+        var basketIds = [];
+        for (var item of button) {
+            item.onclick = f;
+        }
+
+        var basket = document.createElement("div");
+        function f(e) {
+            switch (e.target) {
+                case b1:
+                    var el1 = document.createElement("div");
+                    basket.append(el1)
+                    el1.innerHTML = "Товар - " + items.obj1.tovar + "," + " цена - " + items.obj1.price + "<br>";
+                    basketIds.push(items.obj1.price);
+                    break;
+                case b2:
+                    var el2 = document.createElement("div");
+                    basket.append(el2)
+                    el2.innerHTML = "Товар - " + items.obj2.tovar + "," + " цена - " + items.obj2.price + "<br>";
+                    basketIds.push(items.obj2.price);
+                    break;
+                case b3:
+                    var el3 = document.createElement("div");
+                    basket.append(el3)
+                    el3.innerHTML = "Товар - " + items.obj3.tovar + "," + " цена - " + items.obj3.price + "<br>";
+                    basketIds.push(items.obj3.price);
+                    break;
+                case b4:
+                    var el4 = document.createElement("div");
+                    basket.append(el4)
+                    var total = 0;
+                    for (var i in basketIds) { total += basketIds[i]; }
+                    el4.innerHTML = "Сумма корзины -" + total;
+                    break;
+            }
+        }
+
+        document.querySelector(".header1").append(basket);
+    </script>
+</body>
+
+</html>

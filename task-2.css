@@ -1,0 +1,145 @@
+.container{
+  width: 0 auto;
+  max-width: 1280px;
+}
+
+.prices {
+    width: 100%;
+    padding: 50px;
+    box-sizing: border-box;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    justify-content: space-around;
+  }
+  
+  .prices-header {
+    width: 100%;
+    display: block;
+    margin: 0 0 20px 0;
+    box-sizing: border-box;
+    color: #445161;
+    font-family: "Arial";
+    font-size: 30px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 36px;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .prices-item {
+    width: 5%;
+    margin: 0 20px 0 0;
+    box-sizing: border-box;
+    border: 1px solid black;
+  }
+  
+  .prices-item:nth-child(4) {
+    margin: 0;
+  }
+  
+  .price-1 {
+    top:300px;
+    width: 300px;
+    margin-bottom: 30px;
+    padding: 0 0 10px 0;
+    border: 2px  solid #445161;
+    background-color: #445161;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  .price-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    color: #ffffff;
+    font-family: "Arial";
+    font-size: 24px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 30px;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: normal;
+  }
+  
+  .price-txt {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    padding: 10px;
+    color: #445161;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding:18px 106px;
+    color: #445162;
+    font-family: "Arial ";
+    font-size: 40px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 30px;  
+    text-align: left;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: normal;
+  }
+  
+  .price-btn {
+    display: block;
+    width: 260px;
+    padding: 5px 10px;
+    height: 40px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    outline: none;
+    color: #445161; 
+  }
+  .price-list{
+    color: #ffffff;
+    font-family: "Arial ";
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 24px;
+    text-align: left;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: normal;
+  
+  }
+  .list{
+    margin-bottom: 5px;
+  }
+
+  .price-btn:hover {
+    color: orange;
+    background-color: #fff;
+  }
+  
+  .price-btn:active {
+    color: #fff;
+    background-color: orange;
+  }

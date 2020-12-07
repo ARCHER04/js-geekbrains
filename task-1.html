@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="task-1.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="photo/img0.jpg" alt="" style="width: 100px; height: 100px;" id="ph-1">
+    <img src="photo/img0.jpg" alt="" style="width: 100px; height: 100px;" id="ph-2">
+    <img src="photo/img0.jpg" alt="" style="width: 100px; height: 100px;" id="ph-3" class="img3">
+    <script>
+        var ph1 = document.querySelector("#ph-1");
+        var ph2 = document.querySelector("#ph-2");
+        var ph3 = document.querySelector("#ph-3");
+        var img = document.querySelectorAll("img");
+        var bigImg = ["photo/img2.jpg", "photo/img1.jpg"];
+        for (var item of img) {
+            item.onclick = f;
+        }
+        var newImg = document.createElement("div")
+        function f(e) {
+            switch (e.target) {
+                case ph1:
+                    var el1 = document.createElement("img");
+                    newImg.append(el1);
+                    el1.setAttribute("src", bigImg[0])
+                case ph2:
+                    var el2 = document.createElement("img");
+                    newImg.append(el2);
+                    el2.setAttribute("src", bigImg[1])
+                    break;
+                case ph3:
+                    alert("Увы картинки нет")
+                    break;
+            }
+        }
+        document.querySelector("body").append(newImg);
+    </script>
+</body>
+
+</html>
