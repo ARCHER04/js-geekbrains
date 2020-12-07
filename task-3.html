@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="task-3.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="slides">
+        <button class="btnLeft"> left</button>
+        <img src="photo/301017130-0.jpg" class="block" alt="">
+        <img src="photo/Planets_Clouds_558854_600x337.jpg" alt="">
+        <img src="photo/Без названия.jpg" alt="">
+        <img src="photo/Planets_Clouds_558854_600x337.jpg" alt="">
+        <img src="photo/Planets_Clouds_558854_600x337.jpg" alt="">
+        <button class="btnRight">Right</button>
+
+    </div>
+
+    <script>
+        var btnRight = document.querySelector(".btnRight");
+        var btnLeft = document.querySelector(".btnLeft");
+        var slides = document.querySelectorAll("img");
+        var i = 0;
+
+        btnRight.addEventListener("click", function () {
+            ++i
+            if (i >= slides.length) {
+                slides[i - 1].classList.remove("block");
+                i = 0;
+                slides[i].classList.add("block");
+            } else {
+                slides[i - 1].classList.remove("block");
+                slides[i].classList.add("block");
+            }
+        })
+
+        btnLeft.addEventListener("click", function () {
+            ++i
+            if (i >= slides.length) {
+                slides[i - 1].classList.remove("block");
+                i = 0;
+                slides[i].classList.add("block");
+            } else {
+                slides[i - 1].classList.remove("block");
+                slides[i].classList.add("block");
+            }
+        })
+    </script>
+</body>
+
+</html>
